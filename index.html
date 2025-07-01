@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Safe Harbor Project — For the Forgotten</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/3dc74db3-f7ef-40b8-87f5-a0429fb41ea2.png" />
+  <meta name="description" content="A project to support escorts, addicts in recovery, homeless people, and anyone down on their luck or from the wrong side of the tracks." />
+</head>
+<body class="bg-gradient-to-br from-violet-50 to-teal-50 min-h-screen flex flex-col">
+  <!--
+  HOW TO VIEW THIS SITE IN TERMUX
+
+  1. Save this file as index.html on your Android device.
+  2. Open Termux and navigate (`cd`) to the folder where index.html is saved.
+  3. Start a local web server with: 
+       python3 -m http.server 8080
+  4. In your Android browser, open: 
+       http://127.0.0.1:8080/
+  5. To stop the server, press Ctrl+C in Termux.
+
+  That's it – your site is now viewable locally!
+  -->
+  <!-- Hero Section -->
+  <header class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-purple-300 via-pink-200 to-teal-200 opacity-40 pointer-events-none"></div>
+    <div class="max-w-4xl mx-auto py-14 px-6 text-center relative z-10">
+      <div class="mx-auto w-48 rounded-xl shadow-lg bg-white">
+        <img 
+          src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/89d94bcd-a3b0-4794-9283-2752e6daeaa5.png" 
+          alt="Group of diverse people embracing, bright and hopeful, urban background with sunrise, warm vibrant colors" 
+          onerror="this.style.display='none';this.parentElement.style.background='#c7d2fe';"
+          class="rounded-xl w-full object-cover"
+        />
+      </div>
+      <h1 class="mt-8 text-4xl sm:text-5xl font-extrabold text-gray-800 drop-shadow">Safe Harbor Project</h1>
+      <p class="mt-4 text-xl text-gray-700 font-semibold">For those overlooked, unseen, and in need of hope.</p>
+      <a href="#contact" class="mt-8 inline-block bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition">
+        Reach Out for Help
+      </a>
+    </div>
+  </header>
+
+  <!-- Mission Statement -->
+  <section class="max-w-3xl mx-auto mt-8 px-4 py-6 bg-white/80 rounded-xl shadow-lg">
+    <h2 class="text-2xl font-bold text-purple-800 mb-3 text-center">Our Mission</h2>
+    <p class="text-gray-700 text-lg leading-relaxed text-center">
+      Safe Harbor exists to offer compassion, connection, and resources to anyone struggling—whether you’re an escort, a recovering addict, unhoused, impacted by domestic violence, struggling with suicidal thoughts, or just feeling forgotten by society. You deserve dignity, support, and the chance for a better tomorrow.
+    </p>
+  </section>
+
+  <!-- Who We Help -->
+  <section class="max-w-6xl mx-auto mt-10 mb-2 flex flex-col md:grid md:grid-cols-5 gap-8 px-4">
+    <div class="flex-1 bg-violet-200 rounded-xl shadow p-6 min-h-[130px] flex flex-col items-center text-center">
+      <img 
+        src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/4cf3600d-8b6e-460c-8341-10280acf1d8a.png" 
+        alt="Strong woman with determined expression, city street background, resilient and hopeful" 
+        onerror="this.style.display='none';this.parentElement.style.background='#a5b4fc';"
+        class="mb-3 rounded-full shadow-lg"
+      />
+      <h3 class="text-xl font-bold text-violet-900">Escorts & Sex Workers</h3>
+      <p class="text-gray-700 mt-2">Nonjudgmental help, safety info, and respect.</p>
+    </div>
+    <div class="flex-1 bg-teal-200 rounded-xl shadow p-6 min-h-[130px] flex flex-col items-center text-center">
+      <img 
+        src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ceaee564-9cbe-4a84-96ae-6ed842c5830e.png" 
+        alt="Man in hoodie with hopeful eyes, outreach worker offering hand, urban park, blue and green colors" 
+        onerror="this.style.display='none';this.parentElement.style.background='#99f6e4';"
+        class="mb-3 rounded-full shadow-lg"
+      />
+      <h3 class="text-xl font-bold text-teal-900">Homeless & Unhoused</h3>
+      <p class="text-gray-700 mt-2">Access to essentials and paths to stability.</p>
+    </div>
+    <div class="flex-1 bg-pink-200 rounded-xl shadow p-6 min-h-[130px] flex flex-col items-center text-center">
+      <img 
+        src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1f4a7a17-f017-49b2-ba4c-85ecb50a1f89.png" 
+        alt="Person with tattoos smiling softly, holding recovery coin, sunrise background, pink atmosphere" 
+        onerror="this.style.display='none';this.parentElement.style.background='#fbcfe8';"
+        class="mb-3 rounded-full shadow-lg"
+      />
+      <h3 class="text-xl font-bold text-pink-900">Recovering Addicts</h3>
+      <p class="text-gray-700 mt-2">Support groups, resources, and community strength.</p>
+    </div>
+    <div class="flex-1 bg-blue-200 rounded-xl shadow p-6 min-h-[130px] flex flex-col items-center text-center">
+      <img 
+        src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b6902be1-b548-4270-bfdc-4134837205a7.png" 
+        alt="Bright sunrise and supportive hands, hopeful for suicide prevention" 
+        onerror="this.style.display='none';this.parentElement.style.background='#bfdbfe';"
+        class="mb-3 rounded-full shadow-lg"
+      />
+      <h3 class="text-xl font-bold text-blue-900">Suicide Prevention</h3>
+      <p class="text-gray-700 mt-2">Compassionate crisis support for those struggling with suicidal thoughts.</p>
+    </div>
+    <div class="flex-1 bg-red-200 rounded-xl shadow p-6 min-h-[130px] flex flex-col items-center text-center">
+      <img 
+        src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b851a28f-c4da-48bc-9717-77589572b3bc.png" 
+        alt="Gentle embrace, helping hand stopping violence, peaceful home in the background" 
+        onerror="this.style.display='none';this.parentElement.style.background='#fecaca';"
+        class="mb-3 rounded-full shadow-lg"
+      />
+      <h3 class="text-xl font-bold text-red-900">Domestic Violence</h3>
+      <p class="text-gray-700 mt-2">Assistance, resources, and a safe path forward for survivors of domestic abuse.</p>
+    </div>
+  </section>
+
+  <!-- Our Services -->
+  <section class="max-w-4xl mx-auto mt-10 px-4">
+    <h2 class="text-2xl font-bold text-teal-800 mb-2">What We Offer</h2>
+    <ul class="grid gap-6 sm:grid-cols-2 mt-3">
+      <li class="bg-white shadow rounded p-5 flex items-center space-x-4">
+        <span class="inline-block bg-teal-200 rounded-full h-12 w-12 flex-shrink-0 flex items-center justify-center shadow">
+          <svg width="28" height="28" fill="none" stroke="currentColor" class="text-teal-700">
+            <circle cx="14" cy="14" r="12" stroke-width="2"></circle>
+            <path d="M10 14l2 2 4-4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </span>
+        <span class="text-lg text-gray-800 font-semibold">Emergency needs (food, clothes, hygiene)</span>
+      </li>
+      <li class="bg-white shadow rounded p-5 flex items-center space-x-4">
+        <span class="inline-block bg-pink-200 rounded-full h-12 w-12 flex-shrink-0 flex items-center justify-center shadow">
+          <svg width="28" height="28" fill="none" stroke="currentColor" class="text-pink-700">
+            <path d="M14 21c6-6 8-8 8-11.5a8 8 0 10-16 0C6 13 8 15 14 21z" stroke-width="2"></path>
+          </svg>
+        </span>
+        <span class="text-lg text-gray-800 font-semibold">Safe space & nonjudgmental counseling</span>
+      </li>
+      <li class="bg-white shadow rounded p-5 flex items-center space-x-4">
+        <span class="inline-block bg-blue-200 rounded-full h-12 w-12 flex-shrink-0 flex items-center justify-center shadow">
+          <svg width="28" height="28" fill="none" stroke="currentColor" class="text-blue-700">
+            <path d="M14 4v10m0 4h.01M9 18c-3-3-4-5-4-8a9 9 0 0118 0c0 3-1 5-4 8" stroke-width="2"></path>
+          </svg>
+        </span>
+        <span class="text-lg text-gray-800 font-semibold">Suicide prevention resources & crisis support</span>
+      </li>
+      <li class="bg-white shadow rounded p-5 flex items-center space-x-4">
+        <span class="inline-block bg-red-200 rounded-full h-12 w-12 flex-shrink-0 flex items-center justify-center shadow">
+          <svg width="28" height="28" fill="none" stroke="currentColor" class="text-red-700">
+            <rect width="18" height="14" x="5" y="7" rx="4" stroke-width="2"></rect>
+            <path d="M9 13h10M9 17h10" stroke-width="2" stroke-linecap="round"></path>
+          </svg>
+        </span>
+        <span class="text-lg text-gray-800 font-semibold">Support for those experiencing domestic violence</span>
+      </li>
+      <li class="bg-white shadow rounded p-5 flex items-center space-x-4">
+        <span class="inline-block bg-violet-200 rounded-full h-12 w-12 flex-shrink-0 flex items-center justify-center shadow">
+          <svg width="28" height="28" fill="none" stroke="currentColor" class="text-violet-700">
+            <rect width="21" height="14" x="3.5" y="7" rx="3" stroke-width="2"></rect>
+            <path d="M8 15h8m-4-2v4" stroke-width="2" stroke-linecap="round"></path>
+          </svg>
+        </span>
+        <span class="text-lg text-gray-800 font-semibold">Addiction recovery support</span>
+      </li>
+      <li class="bg-white shadow rounded p-5 flex items-center space-x-4">
+        <span class="inline-block bg-yellow-200 rounded-full h-12 w-12 flex-shrink-0 flex items-center justify-center shadow">
+          <svg width="28" height="28" fill="none" stroke="currentColor" class="text-yellow-700">
+            <path d="M14 12v4m0 4h.01M21.9 20.9a10 10 0 10-13.8 0" stroke-width="2"></path>
+          </svg>
+        </span>
+        <span class="text-lg text-gray-800 font-semibold">Guidance for legal/health services</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Get Involved Banner -->
+  <section class="mt-12 mb-2 mx-auto max-w-4xl px-4">
+    <div class="bg-gradient-to-r from-violet-500 to-teal-500 py-8 px-6 rounded-xl shadow-lg text-white flex flex-col md:flex-row items-center justify-between">
+      <div>
+        <h3 class="text-2xl font-extrabold mb-2">Want to help?</h3>
+        <p class="text-lg">Volunteers and allies always welcome—everyone matters here.</p>
+      </div>
+      <a href="#contact" class="mt-4 md:mt-0 bg-white text-teal-700 font-bold py-2 px-6 rounded-full shadow inline-block hover:bg-gray-200 transition">
+        Contact Us
+      </a>
+    </div>
+  </section>
+
+  <!-- Bad Date Database Section -->
+  <section class="max-w-4xl mx-auto my-12 w-full px-4">
+    <div class="bg-red-50 border-l-4 border-red-400 rounded-xl shadow-lg p-8 mb-8">
+      <h2 class="text-2xl font-extrabold text-red-700 mb-3">Bad Date Database</h2>
+      <p class="text-gray-700 mb-4">
+        <strong>For Escorts’ Safety:</strong> If you have a dangerous or uncomfortable encounter, please fill out the form below. This helps protect others in the community. <br>
+        <span class="text-xs text-gray-500">All information is confidential and for safety only.</span>
+      </p>
+      <!-- Report Bad Date Form -->
+      <form id="reportForm" class="space-y-4 mb-8" method="post">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block font-semibold text-gray-700 mb-1" for="bad_date_name">Name or Alias</label>
+            <input class="w-full px-3 py-2 border border-gray-300 rounded" id="bad_date_name" name="name" type="text" placeholder="Name or nickname"/>
+          </div>
+          <div>
+            <label class="block font-semibold text-gray-700 mb-1" for="bad_date_phone">Phone Number</label>
+            <input class="w-full px-3 py-2 border border-gray-300 rounded" id="bad_date_phone" name="phone" type="text" placeholder="(555) 123-4567"/>
+          </div>
+          <div>
+            <label class="block font-semibold text-gray-700 mb-1" for="bad_date_car">Car Make/Model/Color</label>
+            <input class="w-full px-3 py-2 border border-gray-300 rounded" id="bad_date_car" name="car" type="text" placeholder="e.g. Red Honda Civic"/>
+          </div>
+          <div>
+            <label class="block font-semibold text-gray-700 mb-1" for="bad_date_plate">License Plate (full or partial)</label>
+            <input class="w-full px-3 py-2 border border-gray-300 rounded" id="bad_date_plate" name="plate" type="text" placeholder="ABC123 or partial"/>
+          </div>
+          <div>
+            <label class="block font-semibold text-gray-700 mb-1" for="bad_date_address">Address or Cross Street</label>
+            <input class="w-full px-3 py-2 border border-gray-300 rounded" id="bad_date_address" name="address" type="text" placeholder="123 Main St or 5th & Pine"/>
+          </div>
+        </div>
+        <div>
+          <label class="block font-semibold text-gray-700 mb-1" for="bad_date_details">Details (what happened)</label>
+          <textarea class="w-full px-3 py-2 border border-gray-300 rounded" id="bad_date_details" name="details" rows="3" placeholder="Describe the incident..."></textarea>
+        </div>
+        <button class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-6 rounded shadow transition" type="submit">
+          Submit Bad Date Report
+        </button>
+      </form>
+
+      <hr class="my-6">
+
+      <h3 class="text-xl font-bold text-red-700 mb-2">Check a New Date</h3>
+      <p class="text-gray-700 mb-4">
+        Before meeting someone new, enter any info you have to check for possible matches in the database.
+      </p>
+      <!-- Check Bad Date Form -->
+      <form id="checkForm" class="space-y-4 mb-6" method="post">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block font-semibold text-gray-700 mb-1" for="check_name">Name or Alias</label>
+            <input class="w-full px-3 py-2 border border-gray-300 rounded" id="check_name" name="name" type="text" placeholder="Name or nickname"/>
+          </div>
+          <div>
+            <label class="block font-semibold text-gray-700 mb-1" for="check_phone">Phone Number</label>
+            <input class="w-full px-3 py-2 border border-gray-300 rounded" id="check_phone" name="phone" type="text" placeholder="(555) 123-4567"/>
+          </div>
+          <div>
+            <label class="block font-semibold text-gray-700 mb-1" for="check_car">Car Make/Model/Color</label>
+            <input class="w-full px-3 py-2 border border-gray-300 rounded" id="check_car" name="car" type="text" placeholder="e.g. Red Honda Civic"/>
+          </div>
+          <div>
+            <label class="block font-semibold text-gray-700 mb-1" for="check_plate">License Plate (full or partial)</label>
+            <input class="w-full px-3 py-2 border border-gray-300 rounded" id="check_plate" name="plate" type="text" placeholder="ABC123 or partial"/>
+          </div>
+          <div>
+            <label class="block font-semibold text-gray-700 mb-1" for="check_address">Address or Cross Street</label>
+            <input class="w-full px-3 py-2 border border-gray-300 rounded" id="check_address" name="address" type="text" placeholder="123 Main St or 5th & Pine"/>
+          </div>
+        </div>
+        <button class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-6 rounded shadow transition" type="submit">
+          Check for Matches
+        </button>
+      </form>
+      <p class="text-xs text-gray-500 mt-2">If there’s a match, you’ll get a report with possible warnings. Stay safe!</p>
+    </div>
+  </section>
+
+  <!-- SOS Emergency Alert Button Section -->
+  <section class="max-w-4xl mx-auto my-12 w-full px-4">
+    <div class="bg-yellow-50 border-l-4 border-yellow-400 rounded-xl shadow-lg p-8">
+      <h2 class="text-2xl font-extrabold text-yellow-700 mb-3">SOS Emergency Alert <span class="text-base font-normal">(Coming Soon)</span></h2>
+      <p class="text-gray-700 mb-4">
+        We’re working on a one-tap SOS button for your phone. If you ever feel unsafe on a date, you’ll be able to instantly send a pre-set alert and your GPS location to a trusted contact. <br>
+        <span class="text-xs text-gray-500">Your safety is our top priority. Stay tuned for updates!</span>
+      </p>
+      <button disabled class="bg-yellow-400 text-white font-bold py-2 px-6 rounded shadow opacity-60 cursor-not-allowed">
+        SOS Button (Coming Soon)
+      </button>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section id="contact" class="max-w-2xl mx-auto my-12 w-full px-4">
+    <div class="bg-white rounded-xl shadow-lg p-8">
+      <h2 class="text-2xl font-extrabold text-teal-800 mb-3">Reach Out</h2>
+      <p class="text-gray-700 mb-6">Need help? Want to volunteer? Fill in this form—we’re here for you.</p>
+      <form onsubmit="event.preventDefault(); alert('Thank you for contacting Safe Harbor! Someone will reach out soon.'); this.reset();" class="space-y-5">
+        <div>
+          <label class="block font-semibold text-gray-700 mb-1" for="name">Name</label>
+          <input class="w-full px-4 py-2 border border-gray-300 rounded focus:border-teal-400" id="name" type="text" placeholder="Your name"/>
+        </div>
+        <div>
+          <label class="block font-semibold text-gray-700 mb-1" for="email">Email or Phone</label>
+          <input class="w-full px-4 py-2 border border-gray-300 rounded focus:border-teal-400" id="email" type="text" placeholder="you@example.com or (555) 123-4567"/>
+        </div>
+        <div>
+          <label class="block font-semibold text-gray-700 mb-1" for="message">Message</label>
+          <textarea class="w-full px-4 py-2 border border-gray-300 rounded focus:border-teal-400" id="message" rows="3" placeholder="Tell us what you need or how you want to help..."></textarea>
+        </div>
+        <button class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-6 rounded shadow transition" type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mt-auto py-6 bg-teal-800 text-white text-center text-sm">
+    Safe Harbor Project © 2024 &mdash; You are not alone. All are welcome.
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize database in local storage
+      if (!localStorage.getItem('badDatesDB')) {
+        localStorage.setItem('badDatesDB', JSON.stringify([]));
+      }
+
+      // Report form handler
+      document.getElementById('reportForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const reportData = Object.fromEntries(formData);
+        
+        // Get current DB
+        const currentDB = JSON.parse(localStorage.getItem('badDatesDB'));
+        
+        // Add new report (with timestamp)
+        currentDB.push({
+          ...reportData,
+          id: Date.now(),
+          timestamp: new Date().toISOString()
+        });
+        
+        // Save back to local storage
+        localStorage.setItem('badDatesDB', JSON.stringify(currentDB));
+        
+        // Clear form and show confirmation
+        e.target.reset();
+        alert('Report submitted successfully!');
+      });
+
+      // Check form handler
+      document.getElementById('checkForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const checkData = Object.fromEntries(formData);
+        
+        // Get current DB
+        const currentDB = JSON.parse(localStorage.getItem('badDatesDB'));
+        
+        // Find matches
+        const matches = currentDB.filter(report => {
+          // Simple matching logic - you can improve this
+          const nameMatch = checkData.name && 
+            report.name.toLowerCase().includes(checkData.name.toLowerCase());
+          const phoneMatch = checkData.phone && 
+            report.phone.includes(checkData.phone);
+          const carMatch = checkData.car && 
+            report.car.toLowerCase().includes(checkData.car.toLowerCase());
+          const plateMatch = checkData.plate && 
+            report.plate.toLowerCase().includes(checkData.plate.toLowerCase());
+            
+          return nameMatch || phoneMatch || carMatch || plateMatch;
+        });
+        
+        if (matches.length > 0) {
+          let alertMsg = "⚠️ MATCHES FOUND IN DATABASE ⚠️\n\n";
+          matches.forEach(match => {
+            alertMsg += `Name: ${match.name || 'Not specified'}\n`;
+            alertMsg += `Phone: ${match.phone || 'Not specified'}\n`;
+            alertMsg += `Car: ${match.car || 'Not specified'}\n`;
+            alertMsg += `Plate: ${match.plate || 'Not specified'}\n`;
+            alertMsg += `Details: ${match.details || 'No details'}\n`;
+            alertMsg += `Reported: ${new Date(match.timestamp).toLocaleString()}\n\n`;
+          });
+          alert(alertMsg);
+        } else {
+          alert("No matches found in database");
+        }
+        
+        // Clear form
+        e.target.reset();
+      });
+    });
+  </script>
+</body>
+</html>
