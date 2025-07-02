@@ -273,21 +273,25 @@
     <div class="bg-white rounded-xl shadow-lg p-8">
       <h2 class="text-2xl font-extrabold text-teal-800 mb-3">Reach Out</h2>
       <p class="text-gray-700 mb-6">Need help? Want to volunteer? Fill in this form—we’re here for you.</p>
-      <form onsubmit="event.preventDefault(); alert('Thank you for contacting Safe Harbor! Someone will reach out soon.'); this.reset();" class="space-y-5">
-        <div>
-          <label class="block font-semibold text-gray-700 mb-1" for="name">Name</label>
-          <input class="w-full px-4 py-2 border border-gray-300 rounded focus:border-teal-400" id="name" type="text" placeholder="Your name"/>
-        </div>
-        <div>
-          <label class="block font-semibold text-gray-700 mb-1" for="email">Email or Phone</label>
-          <input class="w-full px-4 py-2 border border-gray-300 rounded focus:border-teal-400" id="email" type="text" placeholder="you@example.com or (555) 123-4567"/>
-        </div>
-        <div>
-          <label class="block font-semibold text-gray-700 mb-1" for="message">Message</label>
-          <textarea class="w-full px-4 py-2 border border-gray-300 rounded focus:border-teal-400" id="message" rows="3" placeholder="Tell us what you need or how you want to help..."></textarea>
-        </div>
-        <button class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-6 rounded shadow transition" type="submit">Send Message</button>
-      </form>
+<form action="https://formsubmit.co/humboldtempowermentnetwork@gmail.com" method="POST" class="space-y-5">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_subject" value="New Contact Form Submission!">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_next" value="https://skip2lovesite.github.io/safeharbor/">
+<div>
+<label class="block font-semibold text-gray-700 mb-1" for="name">Name</label>
+<input class="w-full px-4 py-2 border border-gray-300 rounded focus:border-teal-400" id="name" name="name" type="text" placeholder="Your name" required>
+</div>
+<div>
+<label class="block font-semibold text-gray-700 mb-1" for="email">Email or Phone</label>
+<input class="w-full px-4 py-2 border border-gray-300 rounded focus:border-teal-400" id="email" name="email" type="text" placeholder="you@example.com or (555) 123-4567" required>
+</div>
+<div>
+<label class="block font-semibold text-gray-700 mb-1" for="message">Message</label>
+<textarea class="w-full px-4 py-2 border border-gray-300 rounded focus:border-teal-400" id="message" name="message" rows="3" placeholder="Tell us what you need or how you want to help..." required></textarea>
+</div>
+<button class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-6 rounded shadow transition" type="submit">Send Message</button>
+</form>
     </div>
   </section>
 
@@ -371,5 +375,66 @@
       });
     });
   </script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script>
+  const supabase = supabase.createClient(
+    "https://tqqisluhujggemnetwpi.supabase.co",
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRxcWlzbHVodWpnZ2VtbmV0d3BpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE0ODQzOTMsImV4cCI6MjA2NzA2MDM5M30.5smxGw1NqORZzcl5q47fkiJg-2Mdrq0YzvA01nKaQiI"
+  );
+
+  document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("reportForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const reportData = Object.fromEntries(formData);
+      reportData.created_at = new Date().toISOString();
+
+      const { error } = await supabase.from("bad_date_reports").insert([reportData]);
+      if (error) {
+        alert("❌ Failed to submit: " + error.message);
+      } else {
+        e.target.reset();
+        alert("✅ Report submitted successfully!");
+      }
+    });
+
+    document.getElementById("checkForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const checkData = Object.fromEntries(formData);
+
+      const { data: reports, error } = await supabase.from("bad_date_reports").select("*");
+      if (error) {
+        alert("❌ Error checking database: " + error.message);
+        return;
+      }
+
+      const matches = reports.filter((report) => {
+        const nameMatch = checkData.name && report.name?.toLowerCase().includes(checkData.name.toLowerCase());
+        const phoneMatch = checkData.phone && report.phone?.includes(checkData.phone);
+        const carMatch = checkData.car && report.car?.toLowerCase().includes(checkData.car.toLowerCase());
+        const plateMatch = checkData.plate && report.plate?.toLowerCase().includes(checkData.plate.toLowerCase());
+        return nameMatch || phoneMatch || carMatch || plateMatch;
+      });
+
+      if (matches.length > 0) {
+        let alertMsg = "⚠️ MATCHES FOUND IN DATABASE ⚠️\n\n";
+        matches.forEach((match) => {
+          alertMsg += `Name: ${match.name || "Not specified"}\n`;
+          alertMsg += `Phone: ${match.phone || "Not specified"}\n`;
+          alertMsg += `Car: ${match.car || "Not specified"}\n`;
+          alertMsg += `Plate: ${match.plate || "Not specified"}\n`;
+          alertMsg += `Details: ${match.details || "No details"}\n`;
+          alertMsg += `Reported: ${new Date(match.created_at).toLocaleString()}\n\n`;
+        });
+        alert(alertMsg);
+      } else {
+        alert("✅ No matches found in database.");
+      }
+
+      e.target.reset();
+    });
+  });
+</script>
 </body>
 </html>
