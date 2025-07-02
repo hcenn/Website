@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; background: #f7f7f7; }
+    .report { background: white; padding: 1rem; margin-bottom: 1rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    button { background: #28a745; color: white; border: none; padding: 0.5rem 1rem; border-radius: 5px; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+<h2>Admin Login</h2>
+<form id="login-form">
+  <input type="email" id="email" placeholder="Email" required><br><br>
+  <input type="password" id="password" placeholder="Password" required><br><br>
+  <button type="submit">Login</button>
+</form>
+
+<div id="dashboard" style="display:none;">
+  <h2>Unapproved Reports</h2>
+  <div id="reports"></div>
+</div>
+
+<script>
+  const supabase = supabase.createClient('https://keuqetuwkcphvfkkwilk.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRxcWlzbHVodWpnZ2VtbmV0d3BpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE0ODQzOTMsImV4cCI6MjA2NzA2MDM5M30.5smxGw1NqORZzcl5q47fkiJg-2Mdrq0YzvA01nKaQiI');
+
+  const loginForm = document.getElementById('login-form');
+  const dashboard = document.getElementById('dashboard');
+  const reportsDiv = document.getElementById('reports');
+
+  loginForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+
+    if (error) {
+      alert("Login failed: " + error.message);
+      return;
+    }
+
+    // Check if admin
+    if (email !== "admin@hcen.com") {
+      alert("Access denied");
+      return;
+    }
+
+    loginForm.style.display = 'none';
+    dashboard.style.display = 'block';
+    loadReports();
+  });
+
+  async function loadReports() {
+    const { data, error } = await supabase
+      .from('reports')
+      .select('*')
+      .eq('is_approved', false);
+
+    if (error) {
+      reportsDiv.innerHTML = "Error loading reports";
+      return;
+    }
+
+    if (!data.length) {
+      reportsDiv.innerHTML = "<p>No reports waiting for approval.</p>";
+      return;
+    }
+
+    reportsDiv.innerHTML = "";
+    data.forEach(report => {
+      const div = document.createElement('div');
+      div.className = 'report';
+      div.innerHTML = `
+        <p><strong>Report:</strong> ${report.description || "No description"}</p>
+        <p><strong>Submitted:</strong> ${new Date(report.created_at).toLocaleString()}</p>
+        <button onclick="approveReport(${report.id})">Approve</button>
+      `;
+      reportsDiv.appendChild(div);
+    });
+  }
+
+  async function approveReport(id) {
+    const { error } = await supabase
+      .from('reports')
+      .update({ is_approved: true })
+      .eq('id', id);
+
+    if (error) {
+      alert("Error approving report");
+      return;
+    }
+
+    alert("Report approved");
+    loadReports(); // Refresh list
+  }
+</script>
+
+</body>
+</html>
